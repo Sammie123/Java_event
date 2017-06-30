@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="EventTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-06-30T21:53:17" hostname="Lincolns-MacBook-Air.local" time="0.003">
-  <properties/>
-  <testcase name="costEvent_addCoupon_substract150" classname="EventTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
