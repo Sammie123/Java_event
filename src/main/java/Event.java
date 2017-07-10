@@ -1,38 +1,81 @@
-public class Event {
+class Event {
+  private int mGuest;
+  private String mEntree;
+  private String mBeverage;
+  private String mEntertainment;
+  private String mCoupon;
+  private String mDiscount;
+  private String mLocation;
 
-  public int costEvent (int guest, String entree, String beverage, String entertainment, String coupon, String discount, String location)  {
-    int totalCost = 0;
-    if (guest > 100) {
+
+  public Event (int guest, String entree, String beverage, String entertainment, String coupon, String discount, String location) {
+    mGuest = guest;
+    mEntree = entree;
+    mBeverage = beverage;
+    mEntertainment = entertainment;
+    mCoupon = coupon;
+    mDiscount = discount;
+    mLocation = location;
+  }
+
+  int totalCost = 0;
+
+  public int getGuest() {
+    return mGuest;
+  }
+
+  public String getEntree() {
+    return mEntree;
+  }
+
+  public String getBeverage() {
+    return mBeverage;
+  }
+
+  public String getEntertainment() {
+    return mEntertainment;
+  }
+
+  public String getCoupon() {
+    return mCoupon;
+  }
+
+  public String getDiscount() {
+    return mDiscount;
+  }
+
+  public int costEvent() {
+    if (mGuest > 100) {
       totalCost += 100;
     } else {
       totalCost += 50;
     }
 
-    if (entree.equals("chicken")) {
+    if (mEntree.equals("chicken")) {
       totalCost += 75;
-    } else if (entree.equals("beef")) {
+    } else if (mEntree.equals("beef")) {
       totalCost += 50;
     }
 
-    if (beverage.equals("water")) {
+    if (mBeverage.equals("water")) {
       totalCost += 50;
-    } else if (beverage.equals("champagne")) {
+    } else if (mBeverage.equals("champagne")) {
       totalCost += 100;
     }
 
-    if (entertainment.equals("music")) {
+    if (mEntertainment.equals("music")) {
       totalCost += 25;
-    } else if (entertainment.equals("dancing")) {
+    } else if (mEntertainment.equals("dancing")) {
       totalCost += 50;
     }
 
-    if (coupon.equals("morning")) {
+    if (mCoupon.equals("morning")) {
       totalCost -= 50;
-    } else if (coupon.equals("evening")) {
+    } else if (mCoupon.equals("evening")) {
       totalCost -= 0;
     }
 
-    if (discount.equals("DISCOUNT") && location.equals("park")) {
+    if (mDiscount.equals("DISCOUNT") && mLocation.equals("park")) {
       totalCost -= 100;
     } else {
       return totalCost;
