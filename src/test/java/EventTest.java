@@ -4,63 +4,56 @@ import static org.junit.Assert.*;
 public class EventTest {
 
   @Test
-  public void costEvent_howMuchForOverOneHundredGuest_100(){
-    Event event = new Event();
-    assertEquals(100, event.costEvent(101, "", ""));
+  public void Event_instantiatesCorrectly_true() {
+    Event myEvent = new Event(100, "", "", "", "", "", "");
+    assertEquals(true, myEvent instanceof Event);
   }
 
   @Test
-  public void costEvent_howMuchForEntree_75(){
-    Event event = new Event();
-    assertEquals(75, event.costEvent(0, "chicken",""));
+  public void Event_getGuest_100() {
+    Event myEvent = new Event(100, "", "", "", "", "", "");
+    assertEquals(100, myEvent.getGuest());
   }
 
   @Test
-  public void costEvent_combineCost_175() {
-    Event event = new Event();
-    assertEquals(175, event.costEvent(175, "chicken",""));
+  public void Event_getEntree_chicken() {
+    Event myEvent = new Event(100, "chicken", "", "", "", "", "");
+    assertEquals("chicken", myEvent.getEntree());
   }
 
   @Test
-  public void costEvent_combineCost_225(){
-    Event event = new Event();
-    assertEquals(225, event.costEvent(175, "chicken", "water"));
+  public void Event_getBeverage_water() {
+    Event myEvent = new Event(100, "chicken", "water", "", "", "", "");
+    assertEquals("water", myEvent.getBeverage());
   }
 
   @Test
-  public void costEvent_addCoupon_substract50() {
-    Event event = new Event();
-    assertEquals(200, event.costEvent(150, "chicken", "water", "music", "morning"));
+  public void Event_getEntertainment_dancing() {
+    Event myEvent = new Event(100, "chicken", "water", "dancing", "", "", "");
+    assertEquals("dancing", myEvent.getEntertainment());
   }
 
   @Test
-  public void costEvent_addCoupon_substract150(){
-    Event event = new Event();
-    assertEquals(100, event.costEvent(150, "chicken", "water", "music", "morning", "DISCOUNT", "park"));
+  public void Event_getCoupon_morning() {
+    Event myEvent = new Event(100, "", "", "", "morning", "", "");
+    assertEquals("morning", myEvent.getCoupon());
   }
 
+  @Test
+  public void Event_getDiscount_DISCOUNT() {
+    Event myEvent = new Event(100, "", "", "", "", "DISCOUNT", "");
+    assertEquals("DISCOUNT", myEvent.getDiscount());
+  }
 
+  @Test
+  public void Event_getLocation_park() {
+    Event myEvent = new Event(100, "", "", "", "", "", "park");
+    assertEquals("park", myEvent.getLocation());
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  @Test
+  public void Event_costEvent_150() {
+    Event myEvent = new Event(101, "chicken", "water", "dancing", "morning", "DISCOUNT", "park");
+    assertEquals(125, myEvent.costEvent());
+  }
 }

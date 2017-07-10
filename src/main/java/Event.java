@@ -1,4 +1,4 @@
-class Event {
+public class Event {
   private int mGuest;
   private String mEntree;
   private String mBeverage;
@@ -23,7 +23,7 @@ class Event {
   public int getGuest() {
     return mGuest;
   }
-
+  //
   public String getEntree() {
     return mEntree;
   }
@@ -42,6 +42,10 @@ class Event {
 
   public String getDiscount() {
     return mDiscount;
+  }
+
+  public String getLocation() {
+    return mLocation;
   }
 
   public int costEvent() {

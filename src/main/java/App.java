@@ -25,9 +25,9 @@ public class App {
       System.out.println("We do offer discounts. One coupon that we offer is a $50 discount if the event will be morning. Will your event be in the morning or evening?");
       String stringCoupon = myConsole.readLine();
 
-      System.out.println("Do you have a coupon code? If yes, write it below in all caps(**user please type DISCOUNT**).");
+      System.out.println("Do you have a coupon code? If yes, write it below in all caps and type in 'park' for the next question. If no, type 'no'(**user please type DISCOUNT**).");
       String stringDiscount = myConsole.readLine();
-      System.out.println("In additon to your promo code, we do offer another discount if your event is hosted at Lincoln's Park. If you would like to host your event at our park, type 'park' below");
+      System.out.println("In additon to your promo code, if you would like to host your event at our park, type 'park' below. If no, type 'no'.");
       String stringLocation = myConsole.readLine();
 
       Event event = new Event(intGuest, stringEntree, stringBeverage, stringEntertainment, stringCoupon, stringDiscount, stringLocation);
@@ -45,12 +45,6 @@ public class App {
       System.out.println("Cost is " + "$" + totalCost);
 
       programRunning = false;
-
-
-
-
-
-
     }
   }
 }
